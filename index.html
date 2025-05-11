@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      TUGAS AKHIR GRAFIKA KOMPUTER: IMPLEMENTASI PROGRAM PAINTING INTERAKTIF
+      BERBASIS WEB DENGAN FITUR DRAG & DROP BENTUK DAN EDIT OBJEK
+    </title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="toolbar">
+      <div class="tool-group">
+        <label for="shapeColorPicker">Warna Bentuk:</label>
+        <input type="color" id="shapeColorPicker" value="#000000" />
+      </div>
+      <div class="tool-group">
+        <label for="shapeFillColorPicker">Isi Warna:</label>
+        <input type="color" id="shapeFillColorPicker" value="#ffffff" />
+      </div>
+      <div class="tool-group">
+        <label for="shapeLineWidthPicker">Ketebalan Garis:</label>
+        <input
+          type="number"
+          id="shapeLineWidthPicker"
+          value="1"
+          min="0.5"
+          step="0.5"
+        />
+      </div>
+      <div class="tool-group">
+        <label for="shapeLineTypePicker">Jenis Garis:</label>
+        <div class="line-types">
+          <div
+            class="line-option solid active"
+            data-line="solid"
+            title="Solid"
+          ></div>
+          <div
+            class="line-option dotted"
+            data-line="dotted"
+            title="Dotted"
+          ></div>
+          <div
+            class="line-option dashed"
+            data-line="dashed"
+            title="Dashed"
+          ></div>
+          <div
+            class="line-option dashdot"
+            data-line="dashdot"
+            title="Dash-dot"
+          ></div>
+        </div>
+      </div>
+      <div class="shape-palette">
+        <button class="shape-button" data-shape="circle" title="Lingkaran">
+          <svg viewBox="0 0 24 24">
+            <path
+              fill="currentColor"
+              d="M12 20C7.58 20 4 16.42 4 12C4 7.58 7.58 4 12 4C16.42 4 20 7.58 20 12C20 16.42 16.42 20 12 20M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2Z"
+            />
+          </svg>
+        </button>
+        <button class="shape-button" data-shape="triangle" title="Segitiga">
+          <svg viewBox="0 0 24 24">
+            <path fill="currentColor" d="M12 2L1 21H23L12 2Z" />
+          </svg>
+        </button>
+        <button
+          class="shape-button"
+          data-shape="parallelogram"
+          title="Jajargenjang"
+        >
+          <svg viewBox="0 0 24 24">
+            <path fill="currentColor" d="M4 6H20L16 18H8L4 6Z" />
+          </svg>
+        </button>
+        <button class="shape-button" data-shape="cube" title="Kubus">
+          <svg viewBox="0 0 24 24">
+            <path
+              fill="currentColor"
+              d="M9 2H15V8H21V14H15V20H9V14H3V8H9V2M15 4V6H19V12H15V18H11V12H5V6H11V4H15Z"
+            />
+          </svg>
+        </button>
+        <button class="shape-button" data-shape="cylinder" title="Silinder">
+          <svg viewBox="0 0 24 24">
+            <path
+              fill="currentColor"
+              d="M12 2C16.42 2 20 5.58 20 10V14C20 18.42 16.42 22 12 22C7.58 22 4 18.42 4 14V10C4 5.58 7.58 2 12 2M18 10V14C18 17.31 15.31 20 12 20C8.69 20 6 17.31 6 14V10C6 6.69 8.69 4 12 4C15.31 4 18 6.69 18 10Z"
+            />
+          </svg>
+        </button>
+        <button class="shape-button" data-shape="pentagon" title="Pentagon">
+          <svg viewBox="0 0 24 24">
+            <path fill="currentColor" d="M12 2L2 9L5.5 22H18.5L22 9L12 2Z" />
+          </svg>
+        </button>
+        <button class="image-button" title="Tambahkan Gambar">
+          <svg viewBox="0 0 24 24">
+            <path
+              fill="currentColor"
+              d="M21 19V5C21 3.89 20.1 3 19 3H5C3.89 3 3 3.89 3 5V19C3 20.1 3.89 21 5 21H19C20.1 21 21 20.1 21 19M19 19H5V5H19V19M12 7C14.21 7 16 8.79 16 11C16 13.21 14.21 15 12 15C9.79 15 8 13.21 8 11C8 8.79 9.79 7 12 7M12 9A2 2 0 0 0 10 11A2 2 0 0 0 12 13A2 2 0 0 0 14 11A2 2 0 0 0 12 9M5 17L6.29 15.59L8.6 18L11.4 14L15.4 18L19 13V17H5Z"
+            />
+          </svg>
+          <input
+            type="file"
+            id="imageLoader"
+            accept="image/*"
+            style="display: none"
+          />
+        </button>
+      </div>
+      <button id="resetButton" class="action-button">Reset</button>
+      <button id="saveButton" class="action-button">Simpan</button>
+    </div>
+    <canvas id="drawingCanvas"></canvas>
+    <script src="script.js"></script>
+  </body>
+</html>

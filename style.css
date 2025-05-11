@@ -1,0 +1,179 @@
+body {
+  margin: 0;
+  font-family: sans-serif;
+}
+
+.toolbar {
+  background-color: #f4f4f4;
+  padding: 10px;
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.tool-group {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.line-types {
+  display: flex;
+  gap: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 5px;
+}
+
+/* Tambahkan class baru untuk color palette */
+.color-palette {
+  display: flex;
+  gap: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 5px;
+}
+
+.color-option {
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+  border-radius: 50%;
+  border: 2px solid #ccc;
+}
+
+.color-option.active {
+  border-color: #6666ff;
+  transform: scale(1.1);
+}
+
+.color-option.black {
+  background-color: black;
+}
+.color-option.red {
+  background-color: #ff0000;
+}
+.color-option.blue {
+  background-color: #0000ff;
+}
+.color-option.green {
+  background-color: #00ff00;
+}
+.color-option.yellow {
+  background-color: #ffff00;
+}
+.color-option.purple {
+  background-color: #800080;
+}
+.color-option.orange {
+  background-color: #ffa500;
+}
+
+.line-option {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  background-color: black;
+  border-radius: 2px;
+  box-sizing: border-box;
+}
+
+.line-option.solid {
+  border-bottom: 2px solid black;
+}
+
+.line-option.dotted {
+  background-image: radial-gradient(circle, black 25%, transparent 25%);
+  background-size: 8px 8px;
+  background-position: center;
+}
+
+.line-option.dashed {
+  border-bottom: 2px dashed black;
+}
+
+.line-option.dashdot {
+  border-bottom: 2px solid black;
+  background-image: radial-gradient(circle, black 25%, transparent 25%);
+  background-size: 8px 8px;
+  background-position: bottom center;
+  padding-bottom: 2px;
+}
+
+.line-option.active {
+  outline: 2px solid #6666ff;
+}
+
+.shape-palette {
+  display: flex;
+  gap: 5px;
+}
+
+.shape-button {
+  width: 25px;
+  height: 25px;
+  border: 1px solid #ccc;
+  background-color: white;
+  cursor: pointer; /* memastikan cursor berubah saat hover */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  padding: 3px;
+  transition: all 0.2s ease; /* menambah transisi untuk feedback visual */
+}
+
+.shape-button:hover {
+  background-color: #f0f0f0;
+  transform: scale(1.05);
+}
+
+.shape-button.active {
+  background-color: #e0e0ff;
+  border-color: #6666ff;
+  transform: scale(1.1);
+}
+
+.shape-button svg {
+  width: 15px;
+  height: 15px;
+  pointer-events: none; /* penting: mencegah svg menghalangi click event */
+}
+
+canvas {
+  border: 1px solid #ccc;
+  display: block;
+  margin: 10px auto 0;
+  background-color: white;
+  cursor: crosshair; /* Ubah cursor menjadi crosshair untuk menandakan area yang bisa digambar */
+  user-select: none; /* Mencegah seleksi teks saat menggambar */
+  touch-action: none; /* Mencegah scrolling pada perangkat touchscreen */
+}
+
+canvas:active {
+  cursor: crosshair; /* Tetap crosshair saat active/clicking */
+}
+
+/* Tambahkan style untuk memastikan canvas tetap responsive */
+@media (max-width: 768px) {
+  canvas {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+.action-button {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.2s;
+}
+
+.action-button:hover {
+  background-color: #45a049;
+}
