@@ -12,7 +12,7 @@
   <body>
     <div class="toolbar">
       <div class="tool-group">
-        <label for="shapeColorPicker">Warna Bentuk:</label>
+        <label for="shapeColorPicker">Warna Garis:</label>
         <input type="color" id="shapeColorPicker" value="#000000" />
       </div>
       <div class="tool-group">
@@ -35,26 +35,50 @@
           <div
             class="line-option solid active"
             data-line="solid"
-            title="Solid"
+            title="Garis Solid"
           ></div>
           <div
             class="line-option dotted"
             data-line="dotted"
-            title="Dotted"
+            title="Garis Titik"
           ></div>
           <div
             class="line-option dashed"
             data-line="dashed"
-            title="Dashed"
+            title="Garis Putus-putus"
           ></div>
           <div
             class="line-option dashdot"
             data-line="dashdot"
-            title="Dash-dot"
+            title="Garis Putus-Titik"
           ></div>
         </div>
       </div>
       <div class="shape-palette">
+        <button class="shape-button" data-shape="free" title="Gambar Bebas">
+          <svg viewBox="0 0 24 24">
+            <path
+              fill="currentColor"
+              d="M20.71,7.04C21.1,6.65 21.1,6 20.71,5.63L18.37,3.29C18,2.9 17.35,2.9 16.96,3.29L15.12,5.12L18.87,8.87M3,17.25V21H6.75L17.81,9.93L14.06,6.18L3,17.25Z"
+            />
+          </svg>
+        </button>
+        <button class="shape-button" data-shape="select" title="Pilih Objek">
+          <svg viewBox="0 0 24 24">
+            <path
+              fill="currentColor"
+              d="M7,2H17L13.5,9H17L10,22L12,14H8L12,2M14.74,11L14.85,10.76L17.65,5H9.27L7.43,11H14.74Z"
+            />
+          </svg>
+        </button>
+        <button class="shape-button" data-shape="fill" title="Cat Ember">
+          <svg viewBox="0 0 24 24">
+            <path
+              fill="currentColor"
+              d="M19,11.5C19,11.5 17,13.67 17,15A2,2 0 0,0 19,17A2,2 0 0,0 21,15C21,13.67 19,11.5 19,11.5M5.21,10L10,5.21L14.79,10M16.56,8.94L7.62,0L6.21,1.41L8.59,3.79L3.44,8.94C2.85,9.5 2.85,10.47 3.44,11.06L8.94,16.56C9.23,16.85 9.62,17 10,17C10.38,17 10.77,16.85 11.06,16.56L16.56,11.06C17.15,10.47 17.15,9.5 16.56,8.94Z"
+            />
+          </svg>
+        </button>
         <button class="shape-button" data-shape="circle" title="Lingkaran">
           <svg viewBox="0 0 24 24">
             <path
@@ -65,7 +89,7 @@
         </button>
         <button class="shape-button" data-shape="triangle" title="Segitiga">
           <svg viewBox="0 0 24 24">
-            <path fill="currentColor" d="M12 2L1 21H23L12 2Z" />
+            <path fill="currentColor" d="M1,21H23L12,2M12,6L19.53,19H4.47" />
           </svg>
         </button>
         <button
@@ -74,14 +98,14 @@
           title="Jajargenjang"
         >
           <svg viewBox="0 0 24 24">
-            <path fill="currentColor" d="M4 6H20L16 18H8L4 6Z" />
+            <path fill="currentColor" d="M4,6H20L16,18H8M6,12L8,18H16L18,12H6Z" />
           </svg>
         </button>
         <button class="shape-button" data-shape="cube" title="Kubus">
           <svg viewBox="0 0 24 24">
             <path
               fill="currentColor"
-              d="M9 2H15V8H21V14H15V20H9V14H3V8H9V2M15 4V6H19V12H15V18H11V12H5V6H11V4H15Z"
+              d="M21,16.5C21,16.88 20.79,17.21 20.47,17.38L12.57,21.82C12.41,21.94 12.21,22 12,22C11.79,22 11.59,21.94 11.43,21.82L3.53,17.38C3.21,17.21 3,16.88 3,16.5V7.5C3,7.12 3.21,6.79 3.53,6.62L11.43,2.18C11.59,2.06 11.79,2 12,2C12.21,2 12.41,2.06 12.57,2.18L20.47,6.62C20.79,6.79 21,7.12 21,7.5V16.5M12,4.15L5,8.09V15.91L12,19.85L19,15.91V8.09L12,4.15Z"
             />
           </svg>
         </button>
@@ -89,20 +113,20 @@
           <svg viewBox="0 0 24 24">
             <path
               fill="currentColor"
-              d="M12 2C16.42 2 20 5.58 20 10V14C20 18.42 16.42 22 12 22C7.58 22 4 18.42 4 14V10C4 5.58 7.58 2 12 2M18 10V14C18 17.31 15.31 20 12 20C8.69 20 6 17.31 6 14V10C6 6.69 8.69 4 12 4C15.31 4 18 6.69 18 10Z"
+              d="M12,2C14.21,2 16,3.79 16,6V18C16,20.21 14.21,22 12,22C9.79,22 8,20.21 8,18V6C8,3.79 9.79,2 12,2M12,4C10.9,4 10,4.9 10,6V18C10,19.1 10.9,20 12,20C13.1,20 14,19.1 14,18V6C14,4.9 13.1,4 12,4Z"
             />
           </svg>
         </button>
         <button class="shape-button" data-shape="pentagon" title="Pentagon">
           <svg viewBox="0 0 24 24">
-            <path fill="currentColor" d="M12 2L2 9L5.5 22H18.5L22 9L12 2Z" />
+            <path fill="currentColor" d="M12,2L2,9L5.5,22H18.5L22,9L12,2M12,6L19.13,11.41L16.36,20H7.64L4.87,11.41L12,6Z" />
           </svg>
         </button>
         <button class="image-button" title="Tambahkan Gambar">
           <svg viewBox="0 0 24 24">
             <path
               fill="currentColor"
-              d="M21 19V5C21 3.89 20.1 3 19 3H5C3.89 3 3 3.89 3 5V19C3 20.1 3.89 21 5 21H19C20.1 21 21 20.1 21 19M19 19H5V5H19V19M12 7C14.21 7 16 8.79 16 11C16 13.21 14.21 15 12 15C9.79 15 8 13.21 8 11C8 8.79 9.79 7 12 7M12 9A2 2 0 0 0 10 11A2 2 0 0 0 12 13A2 2 0 0 0 14 11A2 2 0 0 0 12 9M5 17L6.29 15.59L8.6 18L11.4 14L15.4 18L19 13V17H5Z"
+              d="M19,13H13V19H11V13H5V11H11V5H13V11H19V13M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4Z"
             />
           </svg>
           <input
